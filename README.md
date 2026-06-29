@@ -13,7 +13,7 @@ A simple reminder management API built with ASP.NET Core and EF Core. Supports c
 
 ## Features
 
-- Create, update, and delete reminders
+- Fetch and create reminders
 - Schedule background email notifications
 - Hangfire dashboard
 - Environment-based configuration
@@ -73,7 +73,24 @@ ReminderApp.Infrastructure/  # EF Core, repositories, external services
 ReminderApp.Worker/          # Scheduled email processing using hangfire server.
 docker-compose.yml           # Runs the API, Worker, and SQL Server together
 ```
+The solution has two main service:
+  - ReminderApp.Api. Handles HTTP requests and exposes the REST API endpoints to clients, Additionally it schedules hangfire jobs when reminder is created.
+  - ReminderApp.Worker. Polls the data using Hangfire servers and executes jobs at their scheduled time.
 
+Aside from these two services following class librares were implemented:
+  - ReminderApp.Application - Coordinates multiple services to execute Buissnes logic. Provides interfaces of needed services to other projects (example: ReminderRepository). Serves as the centar point of the solution.
+  - ReminderApp.Common - Contains the code that any project might use such as:  DTOs, Enums, Validation attributes
+  - ReminderApp.Domain - Contains Entities and buisness rules over them. So far, the only rule is the method to change the status of the Reminder object.
+  - ReminderApp.Infrastrcture - Responsible for EFCore and all the external services (Hangfire, MailKit). Contains ServiceCollectionExtensions for ReminderApp.Api and ReminderApp.Worker so the DI of these services is logically separated.
+
+The implementation was done this way to separate the responisibilites of different parts of the system and decouple them.
+This structure avoids circular dependency.
+
+The original idea was to us SqLite as the database, but Potgres was used in the end. There were 3 main reasons for this:
+  - There are 2 services that use the datbase ( Worker and Api). This means they both have to have access to the db. Sqlite is in essence a file, this means creating a shared volume between the services and then creating the db file inside it. This defeats the purpose of Sqlite, since the idea of using it was to keep the solution simple and this made containerization and orchestration much more of a hassle.
+  - Hangfire support for SqLite is not too great. There are a couple of loosely maintained community packages. Postgres has a regularly maintained package.
+  - Any further scaling with SqLite would be complicated.
+    
 ## API
 
 | Method | Endpoint | Description |
