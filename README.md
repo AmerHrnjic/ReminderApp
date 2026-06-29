@@ -30,7 +30,7 @@ cd ReminderApp
 
 ### Configure environment variables
 
-Create a `.env` file in the project root.
+Create a `.env` file in the Reminder.Worker project.
 
 Example:
 
@@ -38,6 +38,7 @@ Example:
 EmailSettings__UserName=test@gmail.com
 EmailSettings__Password=testpw
 ```
+You can change only the username and password if using gmail. If you using other an e-mail from another provider you need to change the other environment varaibles. Example of a .env file is provided as .env.example. Remove the .example extension and change the variables.
 
 ### Run with Docker(reommended)
 
