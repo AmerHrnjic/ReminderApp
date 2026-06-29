@@ -34,7 +34,9 @@ cd ReminderApp
 Create a `.env` file in the ReminderApp.Worker and ReminderApp.Api project. The examples of .env files are already provided as .env.example files. Remove the .example extension to have a working .env file.
 
 NOTE:
-Env files are setup for gmail email and password. Look at  'Environment Variables' section for setup of other mail providers.
+Env files are setup for gmail email and password. Look at 'Environment Variables' section for setup of other mail providers.
+
+This settings below refer to email address that is used to send the reminders via email. For a gmail address to be valid it needs to have 2fa enabled and a App password generated.
 
 Example:
 
