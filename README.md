@@ -27,10 +27,14 @@ A simple reminder management API built with ASP.NET Core and EF Core. Supports c
 git clone <repository-url>
 cd ReminderApp
 ```
+### Run with Docker(recommended)
 
-### Configure environment variables
+#### Configure environment variables
 
-Create a `.env` file in the Reminder.Worker project.
+Create a `.env` file in the ReminderApp.Worker and ReminderApp.Api project. The examples of .env files are already provided as .env.example files. Remove the .example extension to have a working .env file.
+
+NOTE:
+Env files are setup for gmail email and password. Look at  'Environment Variables' section for setup of other mail providers.
 
 Example:
 
@@ -38,15 +42,12 @@ Example:
 EmailSettings__UserName=test@gmail.com
 EmailSettings__Password=testpw
 ```
-You can change only the username and password if using gmail. If you using other an e-mail from another provider you need to change the other environment varaibles. Example of a .env file is provided as .env.example. Remove the .example extension and change the variables.
-
-### Run with Docker(recommended)
 
 ```bash
 docker compose up --build
 ```
 
-Or run the Applicatioin locally:
+###  Or run the Applicatioin locally:
 
 Before running the app create a postgres docker container:
 ```
@@ -64,12 +65,13 @@ dotnet run --project src/ReminderApp.Worker
 ## Project Structure
 
 ```
-ReminderApp.Api/
-ReminderApp.Application/
-ReminderApp.Domain/
-ReminderApp.Infrastructure/
-ReminderApp.Worker/
-docker-compose.yml
+ReminderApp.Api/             # ASP.NET Core Web API (controllers, middleware, DI)
+ReminderApp.Application/     # Business logic, services, interfaces
+ReminderApp.Common/          # DTOs, Enums, Validation attributes
+ReminderApp.Domain/          # Core domain models, entities, and business rules
+ReminderApp.Infrastructure/  # EF Core, repositories, external services
+ReminderApp.Worker/          # Scheduled email processing using hangfire server.
+docker-compose.yml           # Runs the API, Worker, and SQL Server together
 ```
 
 ## API
@@ -77,10 +79,11 @@ docker-compose.yml
 | Method | Endpoint | Description |
 |---------|----------|-------------|
 | GET | /reminders | Get all reminders |
-| POST | /reminders | Create reminder |
+| POST | /reminders | Create a reminder |
 
 ## Environment Variables
 
+Worker
 | Variable | Description |
 |----------|-------------|
 | EmailSettings__UserName | test@gmail.com |
@@ -90,6 +93,12 @@ docker-compose.yml
 | EmailSettings__FromName | ReminderApp |
 | EmailSettings__FromEmail | test@gmail.com |
 
+Api
+| Variable | Description |
+|----------|-------------|
+| ASPNETCORE_ENVIRONMENT | Development/Production |
+
+Use Development to enable swagger ui and hangfire dashboards. Production disables these.
 ## License
 
 MIT
