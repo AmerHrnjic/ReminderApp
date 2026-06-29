@@ -40,7 +40,7 @@ EmailSettings__Password=testpw
 ```
 You can change only the username and password if using gmail. If you using other an e-mail from another provider you need to change the other environment varaibles. Example of a .env file is provided as .env.example. Remove the .example extension and change the variables.
 
-### Run with Docker(reommended)
+### Run with Docker(recommended)
 
 ```bash
 docker compose up --build
