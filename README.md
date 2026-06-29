@@ -49,7 +49,7 @@ EmailSettings__Password=testpw
 docker compose up --build
 ```
 
-###  Or run the Applicatioin locally:
+###  Or run the Application locally:
 
 Before running the app create a postgres docker container:
 ```
