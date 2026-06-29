@@ -1,0 +1,50 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:16
+    container_name: reminders-db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: reminders
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  api:
+    container_name: reminders-api
+    build:
+      context: .
+      dockerfile: ReminderApp.Api/Dockerfile
+    ports:
+      - "5000:8080"
+    depends_on:
+      - db
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__Postgres=Host=db;Port=5432;Database=reminders;Username=postgres;Password=postgres
+    env_file:
+      - ./ReminderApp.Api/.env
+
+  worker:
+    container_name: reminders-worker
+    build:
+      context: .
+      dockerfile: ReminderApp.Worker/Dockerfile
+    depends_on:
+      - db
+    environment:
+      - DOTNET_ENVIRONMENT=Development
+      - ConnectionStrings__Postgres=Host=db;Port=5432;Database=reminders;Username=postgres;Password=postgres
+    env_file:
+      - ./ReminderApp.Worker/.env
+volumes:
+  postgres_data:
+
+
+
+
+  

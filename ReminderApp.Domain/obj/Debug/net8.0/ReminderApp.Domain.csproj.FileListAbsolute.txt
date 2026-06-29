@@ -1,0 +1,15 @@
+E:\Projects\ReminderApp\ReminderApp\ReminderApp.Domain\bin\Debug\net8.0\ReminderApp.Domain.deps.json
+E:\Projects\ReminderApp\ReminderApp\ReminderApp.Domain\bin\Debug\net8.0\ReminderApp.Domain.dll
+E:\Projects\ReminderApp\ReminderApp\ReminderApp.Domain\bin\Debug\net8.0\ReminderApp.Domain.pdb
+E:\Projects\ReminderApp\ReminderApp\ReminderApp.Domain\bin\Debug\net8.0\ReminderApp.Common.dll
+E:\Projects\ReminderApp\ReminderApp\ReminderApp.Domain\bin\Debug\net8.0\ReminderApp.Common.pdb
+E:\Projects\ReminderApp\ReminderApp\ReminderApp.Domain\obj\Debug\net8.0\ReminderApp.Domain.csproj.AssemblyReference.cache
+E:\Projects\ReminderApp\ReminderApp\ReminderApp.Domain\obj\Debug\net8.0\ReminderApp.Domain.GeneratedMSBuildEditorConfig.editorconfig
+E:\Projects\ReminderApp\ReminderApp\ReminderApp.Domain\obj\Debug\net8.0\ReminderApp.Domain.AssemblyInfoInputs.cache
+E:\Projects\ReminderApp\ReminderApp\ReminderApp.Domain\obj\Debug\net8.0\ReminderApp.Domain.AssemblyInfo.cs
+E:\Projects\ReminderApp\ReminderApp\ReminderApp.Domain\obj\Debug\net8.0\ReminderApp.Domain.csproj.CoreCompileInputs.cache
+E:\Projects\ReminderApp\ReminderApp\ReminderApp.Domain\obj\Debug\net8.0\Reminder.CB4D3B6A.Up2Date
+E:\Projects\ReminderApp\ReminderApp\ReminderApp.Domain\obj\Debug\net8.0\ReminderApp.Domain.dll
+E:\Projects\ReminderApp\ReminderApp\ReminderApp.Domain\obj\Debug\net8.0\refint\ReminderApp.Domain.dll
+E:\Projects\ReminderApp\ReminderApp\ReminderApp.Domain\obj\Debug\net8.0\ReminderApp.Domain.pdb
+E:\Projects\ReminderApp\ReminderApp\ReminderApp.Domain\obj\Debug\net8.0\ref\ReminderApp.Domain.dll

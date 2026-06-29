@@ -1,0 +1,17 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "ReminderApp.Api\\ReminderApp.Api.csproj",
+        "Action": "Start",
+        "DebugTarget": "IIS Express"
+      },
+      {
+        "Path": "ReminderApp.Worker\\ReminderApp.Worker.csproj",
+        "Action": "Start",
+        "DebugTarget": "ReminderApp.Worker"
+      }
+    ]
+  }
+]

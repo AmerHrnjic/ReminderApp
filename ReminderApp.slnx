@@ -1,0 +1,11 @@
+<Solution>
+  <Project Path="E:/Projects/ReminderApp/ReminderApp/ReminderApp.Test/ReminderApp.Test.csproj" Id="a74907ca-71d6-49f1-8d2c-1cef7a5af3e1">
+    <BuildDependency Project="ReminderApp.Infrastructure/ReminderApp.Infrastructure.csproj" />
+  </Project>
+  <Project Path="ReminderApp.Api/ReminderApp.Api.csproj" Id="66a1fd32-0fab-4f73-afe7-efd1f1ba3350" />
+  <Project Path="ReminderApp.Application/ReminderApp.Application.csproj" Id="600d120e-6ac0-4f31-a755-f81c68cc2e9f" />
+  <Project Path="ReminderApp.Common/ReminderApp.Common.csproj" Id="b92c75bb-190a-42d5-ba58-764bef33d853" />
+  <Project Path="ReminderApp.Domain/ReminderApp.Domain.csproj" Id="1758a3ba-4265-4ce3-b1e0-46c841c7c0d4" />
+  <Project Path="ReminderApp.Infrastructure/ReminderApp.Infrastructure.csproj" Id="f64c303d-e6e0-4d07-b7c5-fb5ac09f07f5" />
+  <Project Path="ReminderApp.Worker/ReminderApp.Worker.csproj" Id="c6f11201-d85d-4e27-95ad-5127717e95d5" />
+</Solution>

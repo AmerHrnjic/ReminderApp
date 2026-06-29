@@ -1,0 +1,50 @@
+[
+  {
+    "ContainingType": "ReminderApp.Api.Controllers.RemindersController",
+    "Method": "GetAll",
+    "RelativePath": "Reminders",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IList\u00601[[ReminderApp.Common.Dtos.Api.ReminderResponseDto, ReminderApp.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "reminders"
+  },
+  {
+    "ContainingType": "ReminderApp.Api.Controllers.RemindersController",
+    "Method": "CreateReminder",
+    "RelativePath": "Reminders",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createReminderDto",
+        "Type": "ReminderApp.Common.Dtos.Api.CreateReminderRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IList\u00601[[ReminderApp.Common.Dtos.Api.CreateReminderResponseDto, ReminderApp.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "reminders"
+  }
+]

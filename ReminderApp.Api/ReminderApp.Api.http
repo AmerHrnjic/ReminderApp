@@ -1,0 +1,6 @@
+@ReminderApp.Api_HostAddress = http://localhost:5280
+
+GET {{ReminderApp.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
